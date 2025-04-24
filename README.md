@@ -42,7 +42,7 @@ The collection includes scripts for tasks such as network security, penetration 
 To get started, clone the repository to your local machine:
 
 ```bash
-$ git clone https://github.com/cgarey2014/Bash-Scripts-Collection.git
+$ git clone https://github.com/cgarey2014/Bash-Scripts.git
 $ cd Bash-Scripts-Collection
 ```
 
