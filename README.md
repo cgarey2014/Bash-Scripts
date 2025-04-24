@@ -2,7 +2,7 @@
 
 **Author:** Chris Garey  
 **Date:** 2024  
-**Repository:** [BadUSB-Scripts](https://github.com/cgarey2014/BadUSB-Scripts)  
+**Repository:** [Bash-Scripts](https://github.com/cgarey2014/Bash-Scripts/tree/main)  
 **Category:** Security / Automation / Utilities
 
 ---
