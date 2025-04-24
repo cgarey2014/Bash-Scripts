@@ -68,7 +68,7 @@ $ ./directory_enumeration.sh -u http://example.com -w /path/to/wordlist.txt
 
 This will test all directories in the wordlist against the provided URL.
 
-Verbose Mode:
+**Verbose Mode:**
 To enable verbose output, use the -v flag. This will display HTTP status codes for each request.
 
 ```bash
