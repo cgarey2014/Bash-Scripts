@@ -1,78 +1,79 @@
-# Enumeration Buster
+# 🔍 Directory Enumeration Script
 
-Enumeration Buster is a directory enumeration script that performs HTTP requests based on a supplied wordlist to discover accessible directories. It includes a spinner progress indicator and optional verbose mode.
+**Author:** Chris Garey  
+**Date:** 2024  
+**Repository:** [BadUSB-Scripts](https://github.com/cgarey2014/BadUSB-Scripts)  
+**Category:** Security / Penetration Testing / Directory Enumeration
 
-## Requirements
+---
 
-- curl
-- grep
+## 📜 Description
 
-## Usage
+This bash script automates the process of **directory enumeration** for a given URL using a wordlist. It attempts to find valid directories by making HTTP requests and checking the responses. The script supports basic verbosity, showing the HTTP response codes and the status of each directory being tested.
 
-1. Clone the repository:
+It’s designed to assist penetration testers and security researchers with the discovery of hidden or restricted directories on web servers. The script outputs the found directories and provides real-time feedback about the status of each attempt.
 
-    ```sh
-    git clone https://github.com/cgarey2014/Enumeration-Buster.git
-    cd Enumeration-Buster
-    ```
+---
 
-2. Make the script executable:
+## ⚙️ Script Overview
 
-    ```sh
-    chmod +x dir_enum.sh
-    ```
+### **directory_enumeration.sh**
+   - **Description:** This script checks for valid directories on a web server by attempting HTTP requests with directory names from a given wordlist.
+   - **Target:** Linux / macOS (with curl and grep installed)
+   - **Key Features:**
+     - **Verbose Mode:** Shows HTTP response codes for each request.
+     - **Spinner:** Displays a progress spinner while performing the enumeration.
+     - **Status Codes:** Highlights directories that return a **200** (OK) status, indicating they exist.
+     - **Exit Status:** Reports missing dependencies (curl, grep) if not installed.
 
-3. Run the script:
+---
 
-    ```sh
-    ./dir_enum.sh -u <url> -w <wordlist> [-v]
-    ```
+## 🚨 Disclaimer
 
-    - `-u <url>`: Base URL for directory enumeration (e.g., http://example.com)
-    - `-w <wordlist>`: Path to the wordlist file
-    - `-v`: Enable verbose mode (optional)
+**This script is intended for authorized use only.**  
+**Ensure you have explicit permission before running it on any system or network. Unauthorized scanning may be illegal.**
 
-## Adding to PATH
+The author assumes no responsibility for the misuse of this tool.
 
-To run `dir_enum.sh` from anywhere in your terminal, you need to add the script to your PATH.
+---
 
-1. Move the script to a directory that is already in your PATH, such as `/usr/local/bin`:
+## 🛠️ Requirements
 
-    ```sh
-    sudo mv dir_enum.sh /usr/local/bin/
-    ```
+- **Operating System:** Linux or macOS
+- **Dependencies:**
+  - `curl`: For making HTTP requests.
+  - `grep`: For searching through command output.
+- **Wordlist:** A text file containing potential directory names to test (one per line).
 
-2. Alternatively, you can add the directory containing the script to your PATH. Add the following line to your `~/.bashrc`, `~/.zshrc`, or the appropriate configuration file for your shell:
+---
 
-    ```sh
-    export PATH=$PATH:/path/to/Enumeration-Buster
-    ```
+## 🧠 Usage
 
-    Replace `/path/to/Enumeration-Buster` with the actual path to the directory containing `dir_enum.sh`.
+### **Basic Usage:**
 
-3. Reload your shell configuration:
-
-    ```sh
-    source ~/.bashrc
-    # or
-    source ~/.zshrc
-    ```
-
-## Example
-
-```sh
-dir_enum.sh -u http://example.com -w wordlist.txt -v
+```bash
+$ ./directory_enumeration.sh -u <url> -w <wordlist>
 ```
 
-## Features
-- Directory enumeration based on a supplied wordlist.
-- Displays HTTP response codes.
-- Verbose mode to show all attempted URLs and their response codes.
-- Spinner progress indicator.
-- Highlighted output for found directories.
+**-u <url>**: The base URL for the directory enumeration (e.g., http://example.com).
 
-##Author
-Chris Garey
+**-w <wordlist>**: Path to the wordlist file containing directory names to test.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+**-v**: (Optional) Enable verbose mode, which shows HTTP response codes and the URLs being tested.
+
+Example:
+```bash
+$ ./directory_enumeration.sh -u http://example.com -w /path/to/wordlist.txt
+```
+
+This will test all directories in the wordlist against the provided URL.
+
+Verbose Mode:
+To enable verbose output, use the -v flag. This will display HTTP status codes for each request.
+
+```bash
+$ ./directory_enumeration.sh -u http://example.com -w /path/to/wordlist.txt -v
+```
+
+## 📌 License
+This project is distributed for educational purposes under the MIT License.
